@@ -162,12 +162,21 @@ HTTPS en producción (proxy inverso con NGINX o similar).
 
 CAPTURAS 
 INICIO
+
 <img width="631" height="186" alt="image" src="https://github.com/user-attachments/assets/bb4defdf-6f3b-4263-ad4a-5bf9dc09fe25" />
+
 REGISTRO
+
 <img width="716" height="153" alt="image" src="https://github.com/user-attachments/assets/3e308e22-e494-4e71-b84a-1f6d00389ef5" />
+
 SUBIDA DOCUMENTOS
+
 <img width="710" height="171" alt="image" src="https://github.com/user-attachments/assets/3516f73a-08f8-486e-918e-1297beb465e8" />
+
 BUSCADOR
+
 <img width="599" height="300" alt="image" src="https://github.com/user-attachments/assets/120945f2-1083-4a85-bb5e-d3b1eae378d6" />
+
 MODIFICACION DOCUMENTOS
-z<img width="617" height="328" alt="image" src="https://github.com/user-attachments/assets/21243861-2540-4013-b2f7-e99b30393ab4" />
+
+<img width="617" height="328" alt="image" src="https://github.com/user-attachments/assets/21243861-2540-4013-b2f7-e99b30393ab4" />
