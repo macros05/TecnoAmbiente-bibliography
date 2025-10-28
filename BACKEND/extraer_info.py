@@ -13,7 +13,7 @@ from sqlalchemy.exc import OperationalError
 # === CONFIG ===
 UPLOAD_DIR = "uploads"
 # Reemplazar con clave de API de DeepSeek. 
-DEEPSEEK_API_KEY = "sk-d2ccf7d81d0b4640baca1d0f04069283"
+DEEPSEEK_API_KEY = "KEY_DEEPSEEK_AQUI"
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL = "deepseek-chat"
 ERROR_LOG = "errores.txt"  # Archivo donde se guardarán los errores
