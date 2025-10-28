@@ -24,26 +24,26 @@ API REST documentada automáticamente en /docs (OpenAPI).
 Angular Universal (SSR) opcional para mejor SEO y rendimiento.
 
 🗂️ Estructura del repositorio
-biblio-tecnoambiente/
-├─ backend/                     # API FastAPI (Python)
-│  ├─ main.py
-│  ├─ models.py
-│  ├─ schemas.py
-│  ├─ crud.py
-│  ├─ auth.py
-│  ├─ database.py
-│  ├─ requirements.txt
-│  └─ uploads/                  # (vacía; no se versiona contenido)
-├─ frontend/                    # Angular (SSR opcional)
-│  ├─ src/
-│  ├─ angular.json
-│  └─ package.json
-├─ database/                    # dump.sql (estructura y/o datos de ejemplo)
-├─ docs/                        # capturas, diagramas (opcional)
-├─ .gitignore
-├─ .gitattributes
-├─ .env.example                 # plantilla de variables
-└─ README.md
+		biblio-tecnoambiente/
+		├─ backend/                     # API FastAPI (Python)
+		│  ├─ main.py
+		│  ├─ models.py
+		│  ├─ schemas.py
+		│  ├─ crud.py
+		│  ├─ auth.py
+		│  ├─ database.py
+		│  ├─ requirements.txt
+		│  └─ uploads/                  # (vacía; no se versiona contenido)
+		├─ frontend/                    # Angular (SSR opcional)
+		│  ├─ src/
+		│  ├─ angular.json
+		│  └─ package.json
+		├─ database/                    # dump.sql (estructura y/o datos de ejemplo)
+		├─ docs/                        # capturas, diagramas (opcional)
+		├─ .gitignore
+		├─ .gitattributes
+		├─ .env.example                 # plantilla de variables
+		└─ README.md
 
 🚀 Puesta en marcha (local, sin Docker)
 Requisitos
