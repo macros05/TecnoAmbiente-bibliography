@@ -1,4 +1,19 @@
 Biblio Tecnoambiente
+[![API: FastAPI](https://img.shields.io/badge/API-FastAPI-009688)](#)
+[![Frontend: Angular](https://img.shields.io/badge/Frontend-Angular%20(SSR)-DD0031)](#)
+[![DB: MySQL 8](https://img.shields.io/badge/DB-MySQL%208-4479A1)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#-licencia)
+## Índice
+- [Características](#características)
+- [Arquitectura](#arquitectura)
+- [Requisitos](#requisitos)
+- [Puesta en marcha](#puesta-en-marcha)
+- [Variables de entorno](#variables-de-entorno)
+- [Endpoints](#endpoints)
+- [Capturas](#capturas)
+- [Roadmap](#roadmap)
+- [Autor](#autor)
+- [Licencia](#licencia)
 
 Aplicación web para la gestión bibliográfica de Tecnoambiente: altas, consulta, búsqueda con filtros y administración de referencias.
 
