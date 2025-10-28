@@ -1,0 +1,26 @@
+# ---- Angular / Node
+node_modules/
+dist/
+*.log
+
+# ---- Python / FastAPI
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+
+nohup.out
+*.sqlite
+
+# ---- Sistema / pesados
+.DS_Store
+Thumbs.db
+*.zip
+*.7z
+*.tar
+*.bak
+

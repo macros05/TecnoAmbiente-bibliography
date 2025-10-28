@@ -1,0 +1,15 @@
+Error con T 4.3 Listado Centros.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con T 4.2.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con T3.7.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con fddafbb9d7fb29ae987ba5766dfb7a8aadd2779639993.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con d44d0a3beeaf9e4e313335b66dfb53e38dd5973330836.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con Examen UD6 (2).pdf: ❌ No se pudo abrir el archivo: uploads/Examen UD6 (2).pdf. Error: document closed or encrypted
+Error con uploads/notificacion_202499901414396.pdf: (pymysql.err.DataError) (1406, "Data too long for column 'titulo' at row 1")
+[SQL: INSERT INTO documentos (titulo, autores, anio, palabras_clave, ruta_pdf, fecha_subida) VALUES (%(titulo)s, %(autores)s, %(anio)s, %(palabras_clave)s, %(ruta_pdf)s, %(fecha_subida)s)]
+[parameters: {'titulo': 'RESOLUCIÓN DE LA DELEGACIÓN TERRITORIAL DE EMPLEO, EMPRESA Y TRABAJO AUTÓNOMO EN MÁLAGA POR LA QUE SE INADMITE POR EXTEMPORÁNEA LA SOLICITUD PRESENTA ... (14 characters truncated) ... RAMOS, RAFAEL ALBERTO PARA LA CONCESIÓN DE UNA SUBVENCIÓN DE LA LÍNEA 2, INICIO DE ACTIVIDAD, REGULADA EN LA ORDEN DE 29 DE JUNIO DE 2023 QUE SE CITA', 'autores': 'Consejería de Empleo, Empresa y Trabajo Autónomo, Delegación Territorial en Málaga', 'anio': 2024, 'palabras_clave': 'subvenciones, trabajo autónomo, concurrencia no competitiva, Régimen Especial de la Seguridad Social, Delegación Territorial, BOJA, AEAT', 'ruta_pdf': 'uploads/notificacion_202499901414396.pdf', 'fecha_subida': datetime.datetime(2025, 6, 10, 8, 56, 22, 291412)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Error con T10.3.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con T8.1.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con T5.5.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con T10.3.pdf: ❌ No se encontró un JSON válido en la respuesta
+Error con T7.3.pdf: ❌ No se encontró un JSON válido en la respuesta

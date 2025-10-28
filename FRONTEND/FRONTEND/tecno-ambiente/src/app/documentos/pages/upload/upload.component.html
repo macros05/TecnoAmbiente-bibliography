@@ -1,0 +1,44 @@
+<section class="upload">
+  <h1>Subir documentos PDF</h1>
+
+  <!-- Loader y Barra de Progreso -->
+  <div *ngIf="cargando" class="loader">
+    <p>⏳ Subiendo archivos... {{ progreso }}%</p>
+    <progress [value]="progreso" max="100"></progress>
+  </div>
+
+  <form (submit)="subirPDFs(); $event.preventDefault()">
+    <label for="archivo">Selecciona uno o varios archivos PDF:</label>
+    <input
+      type="file"
+      id="archivo"
+      name="archivo"
+      (change)="onArchivosSeleccionados($event)"
+      accept="application/pdf"
+      multiple
+      style="color: #000000"
+    />
+
+    <ul *ngIf="archivos.length > 0" [ngStyle]="{'color': 'black'}">
+      <li *ngFor="let archivo of archivos">{{ archivo.name }}</li>
+    </ul>
+
+    <button type="submit" [disabled]="cargando">Subir</button>
+  </form>
+
+  <div *ngIf="procesadosCorrectamente.length > 0">
+    <h3 [ngStyle]="{'color': '#004976'}">✅ Procesados correctamente:</h3>
+    <ul>
+      <li *ngFor="let archivo of procesadosCorrectamente" [ngStyle]="{'color': 'black'}">{{ archivo }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="erroresProcesamiento.length > 0">
+    <h3>❌ Errores de procesamiento:</h3>
+    <ul>
+      <li *ngFor="let e of erroresProcesamiento">
+        {{ e.archivo }} — {{ e.error }}
+      </li>
+    </ul>
+  </div>
+</section>
