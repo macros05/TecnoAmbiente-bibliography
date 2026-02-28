@@ -35,15 +35,10 @@ Aplicación web para la gestión bibliográfica de Tecnoambiente: altas, consult
 ---
 
 ## 🧱 Arquitectura
-```mermaid
 flowchart LR
-  FE[Angular (SSR opcional)] -- HTTP --> BE[FastAPI]
+  FE["Angular (SSR opcional)"] -- HTTP --> BE[FastAPI]
   BE -- SQLAlchemy --> DB[(MySQL 8)]
-```
-> El frontend lee `apiUrl` desde `src/environments/*`.  
-> El backend usa `DATABASE_URL` (MySQL) vía variables de entorno.
 
----
 
 ## 🧰 Requisitos
 
