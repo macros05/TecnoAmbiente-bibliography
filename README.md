@@ -155,7 +155,10 @@ npm run test
 <img width="716" height="153" alt="image" src="https://github.com/user-attachments/assets/3e308e22-e494-4e71-b84a-1f6d00389ef5" />
 
 ### SUBIDA DOCUMENTOS
-<img width="710" height="171" alt="image" src="https://github.com/user-attachments/assets/3516f73a-08f8-486e-918e-1297beb465e8" />
+<img width="1470" height="636" alt="image" src="https://github.com/user-attachments/assets/175c85a5-d8af-4f10-82f9-1c00d9f3d02a" />
+
+### LISTA DE PDFS
+<img width="1470" height="800" alt="image" src="https://github.com/user-attachments/assets/6a24ca5b-0322-45a4-bbc4-5839b8d91c13" />
 
 ### BUSCADOR
 <img width="599" height="300" alt="image" src="https://github.com/user-attachments/assets/120945f2-1083-4a85-bb5e-d3b1eae378d6" />
