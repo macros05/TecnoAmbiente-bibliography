@@ -152,7 +152,7 @@ npm run test
 <img width="631" height="186" alt="image" src="https://github.com/user-attachments/assets/bb4defdf-6f3b-4263-ad4a-5bf9dc09fe25" />
 
 ### REGISTRO
-<img width="716" height="153" alt="image" src="https://github.com/user-attachments/assets/3e308e22-e494-4e71-b84a-1f6d00389ef5" />
+<img width="1461" height="704" alt="image" src="https://github.com/user-attachments/assets/d9833e7f-296f-402a-9faf-4a8372b1ea3e" />
 
 ### SUBIDA DOCUMENTOS
 <img width="1470" height="636" alt="image" src="https://github.com/user-attachments/assets/175c85a5-d8af-4f10-82f9-1c00d9f3d02a" />
