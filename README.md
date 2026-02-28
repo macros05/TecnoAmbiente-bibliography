@@ -6,16 +6,16 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#-licencia)
 
 ## Índice
-- [Características](#características)
-- [Arquitectura](#arquitectura)
-- [Requisitos](#requisitos)
-- [Puesta en marcha](#puesta-en-marcha)
-- [Variables de entorno](#variables-de-entorno)
-- [Endpoints](#endpoints)
-- [Capturas](#capturas)
-- [Roadmap](#roadmap)
-- [Autor](#autor)
-- [Licencia](#licencia)
+- [✨ Características](#-características)
+- [🧱 Arquitectura](#-arquitectura)
+- [🧰 Requisitos](#-requisitos)
+- [🚀 Puesta en marcha](#-puesta-en-marcha-local-sin-docker)
+- [🔌 Endpoints](#-endpoints-vista-general)
+- [🖼️ Capturas](#️-capturas)
+- [🔐 Seguridad](#-seguridad)
+- [🗺️ Roadmap](#️-roadmap)
+- [👤 Autor](#-autor)
+- [📄 Licencia](#-licencia)
 
 Aplicación web para la gestión bibliográfica de Tecnoambiente: altas, consulta, búsqueda con filtros y administración de referencias.
 
