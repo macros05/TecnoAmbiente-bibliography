@@ -35,6 +35,7 @@ Aplicación web para la gestión bibliográfica de Tecnoambiente: altas, consult
 ---
 
 ## 🧱 Arquitectura
+```mermaid
 flowchart LR
   FE["Angular (SSR opcional)"] -- HTTP --> BE[FastAPI]
   BE -- SQLAlchemy --> DB[(MySQL 8)]
