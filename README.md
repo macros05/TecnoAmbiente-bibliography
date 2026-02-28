@@ -149,7 +149,7 @@ npm run test
 
 
 ### INICIO
-<img width="631" height="186" alt="image" src="https://github.com/user-attachments/assets/bb4defdf-6f3b-4263-ad4a-5bf9dc09fe25" />
+<img width="1470" height="828" alt="image" src="https://github.com/user-attachments/assets/12d6ff47-3430-4e44-99fa-e79d63f7c040" />
 
 ### REGISTRO
 <img width="1461" height="704" alt="image" src="https://github.com/user-attachments/assets/d9833e7f-296f-402a-9faf-4a8372b1ea3e" />
@@ -161,10 +161,10 @@ npm run test
 <img width="1470" height="800" alt="image" src="https://github.com/user-attachments/assets/6a24ca5b-0322-45a4-bbc4-5839b8d91c13" />
 
 ### BUSCADOR
-<img width="599" height="300" alt="image" src="https://github.com/user-attachments/assets/120945f2-1083-4a85-bb5e-d3b1eae378d6" />
+<img width="1470" height="802" alt="image" src="https://github.com/user-attachments/assets/1528a249-a3e4-49fa-96fb-967c68487d58" />
 
 ### MODIFICACIÓN DOCUMENTOS
-<img width="617" height="328" alt="image" src="https://github.com/user-attachments/assets/21243861-2540-4013-b2f7-e99b30393ab4" />
+<img width="1188" height="718" alt="image" src="https://github.com/user-attachments/assets/7bbc68ac-6d48-4554-903a-847d057b72df" />
 
 ---
 
