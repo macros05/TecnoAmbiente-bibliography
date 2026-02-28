@@ -1,0 +1,135 @@
+/* Contenedor principal (Fondo gris suave) */
+.admin-container {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 900px; /* Evita que se estire infinito en pantallas grandes */
+}
+
+/* Tarjeta del Formulario */
+.admin-card {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+mat-card-title {
+  color: #004976;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem !important;
+}
+
+/* Grid del formulario (2 columnas) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% - 50% */
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* En móvil, volver a 1 columna */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Botones del formulario */
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* A la derecha */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: #004976;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+
+/* --- ESTILOS DE LA TABLA --- */
+
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden; /* Para que las esquinas redondeadas funcionen */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.table-header {
+  background-color: #004976;
+  padding: 1rem 1.5rem;
+  color: white;
+}
+
+.table-header h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.user-table {
+  width: 100%;
+}
+
+.user-table th {
+  color: #5f6368;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.user-table td {
+  padding: 1rem;
+  color: #3c4043;
+}
+
+/* Badge para el nombre de usuario (Negrita suave) */
+.user-badge {
+  font-weight: 600;
+  color: #004976;
+}
+
+/* Chip para el Rol (Estilo etiqueta) */
+.role-chip {
+  background-color: #e8f0fe;
+  color: #1967d2;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Si es admin, color distinto */
+.role-chip.admin {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+/* Alineación de acciones */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #70757a;
+}

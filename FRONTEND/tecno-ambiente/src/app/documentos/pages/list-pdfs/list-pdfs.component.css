@@ -1,0 +1,225 @@
+/* --- FONDO Y CONTENEDOR PRINCIPAL --- */
+.container-fluid {
+  background-color: #f0f2f5; /* Mismo gris suave de fondo */
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+}
+
+/* --- TÍTULOS Y CABECERA --- */
+h2 {
+  color: #004976; /* Azul Tecnoambiente */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p.text-muted {
+  color: #5f6368 !important;
+  font-size: 1rem;
+}
+
+/* --- TARJETA DE ESTADÍSTICAS (El círculo/badge grande) --- */
+.stats-card {
+  background-color: #004976; /* Azul corporativo */
+  color: white;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 73, 118, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats-card mat-icon {
+  color: #F6BE00; /* Amarillo para el icono */
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+/* --- TARJETA DE FILTROS Y BÚSQUEDA --- */
+.search-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.input-group-text {
+  background-color: white;
+  border-right: none;
+}
+
+.input-group .form-control {
+  border-left: none;
+  font-size: 1rem;
+}
+
+.input-group .form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+/* Botón BUSCAR (Estilo SearchComponent) */
+.btn-primary {
+  background-color: #004976;
+  border-color: #004976;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00365a;
+  box-shadow: 0 4px 8px rgba(0, 73, 118, 0.2);
+}
+
+/* Botón SUBIR NUEVO (Estilo SearchComponent - Amarillo) */
+.btn-success {
+  background-color: #F6BE00; /* Amarillo Tecnoambiente */
+  border-color: #F6BE00;
+  color: #004976; /* Texto azul para contraste */
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #e0ac00;
+  color: #003355;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(246, 190, 0, 0.3);
+}
+
+.btn-success mat-icon {
+  color: #004976; /* Icono azul dentro del botón amarillo */
+}
+
+/* --- TABLA DE RESULTADOS (Diseño Limpio) --- */
+.results-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 73, 118, 0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden; /* Para redondear la tabla */
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  color: #004976;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f7ff; /* Azul muy muy claro al pasar ratón */
+}
+
+.table td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Título del documento en la tabla */
+.doc-title {
+  color: #1a202c;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Icono PDF Rojo (Estilo SearchComponent) */
+.pdf-icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: #fff5f5; /* Fondo rojo muy suave */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.pdf-icon-box mat-icon {
+  color: #d32f2f; /* Rojo PDF */
+  font-size: 24px;
+}
+
+/* --- CHIPS / ETIQUETAS (Estilo SearchComponent) --- */
+.keyword-chip {
+  background-color: #f0f4f8;
+  color: #334e68;
+  border: 1px solid #d9e2ec;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+
+/* --- BOTONES DE ACCIÓN (Ver / Eliminar) --- */
+.action-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  margin: 0 4px;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+/* Botón VER (Azul) */
+.btn-view {
+  color: #004976;
+}
+.btn-view:hover {
+  background-color: #e3f2fd;
+  color: #01579b;
+}
+
+/* Botón ELIMINAR (Rojo) */
+.btn-delete {
+  color: #d32f2f;
+}
+.btn-delete:hover {
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+/* --- PAGINACIÓN --- */
+.card-footer {
+  background-color: white;
+  border-top: 1px solid #f0f0f0;
+  padding: 1rem;
+}
+
+.pagination .page-link {
+  color: #004976;
+  border: none;
+  background: transparent;
+  font-weight: 500;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #cbd5e0;
+}
+
+.pagination .page-link:hover {
+  text-decoration: underline;
+  background: transparent;
+}

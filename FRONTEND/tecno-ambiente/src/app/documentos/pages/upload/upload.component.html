@@ -1,0 +1,82 @@
+<div class="upload-container">
+  <div class="content-wrapper">
+    
+    <mat-card class="upload-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>cloud_upload</mat-icon>
+          Subir Documentos PDF
+        </mat-card-title>
+        <mat-card-subtitle>
+          Selecciona los archivos para procesar con IA
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div *ngIf="cargando" class="progress-section">
+          <p class="progress-text">
+            <mat-spinner diameter="20" class="mini-spinner"></mat-spinner> 
+            Subiendo y analizando... {{ progreso }}%
+          </p>
+          <mat-progress-bar mode="determinate" [value]="progreso"></mat-progress-bar>
+        </div>
+
+        <form (submit)="subirPDFs(); $event.preventDefault()" class="upload-form">
+          
+          <div class="file-drop-area">
+            <input type="file" id="archivo" name="archivo" 
+                   (change)="onArchivosSeleccionados($event)" 
+                   accept="application/pdf" multiple />
+            
+            <div class="fake-btn">
+              <mat-icon>folder_open</mat-icon> Seleccionar Archivos
+            </div>
+            <p class="file-msg" *ngIf="archivos.length === 0">o arrastra tus PDFs aquí</p>
+            <p class="file-msg selected" *ngIf="archivos.length > 0">
+              <strong>{{ archivos.length }}</strong> archivo(s) seleccionado(s)
+            </p>
+          </div>
+
+          <div *ngIf="archivos.length > 0" class="file-list-preview">
+            <ul>
+              <li *ngFor="let archivo of archivos | slice:0:5">
+                <mat-icon>description</mat-icon> {{ archivo.name }}
+              </li>
+              <li *ngIf="archivos.length > 5" class="more-files">
+                +{{ archivos.length - 5 }} archivos más...
+              </li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <button mat-raised-button class="btn-upload" type="submit" 
+                    [disabled]="cargando || archivos.length === 0">
+              <mat-icon>rocket_launch</mat-icon> Iniciar Procesamiento
+            </button>
+          </div>
+
+        </form>
+
+        <div *ngIf="procesadosCorrectamente.length > 0" class="results-box success">
+          <h3><mat-icon>check_circle</mat-icon> Procesados Correctamente ({{ procesadosCorrectamente.length }})</h3>
+          <ul class="result-list">
+            <li *ngFor="let archivo of procesadosCorrectamente">
+              {{ archivo }}
+            </li>
+          </ul>
+        </div>
+
+        <div *ngIf="erroresProcesamiento.length > 0" class="results-box error">
+          <h3><mat-icon>warning</mat-icon> Errores ({{ erroresProcesamiento.length }})</h3>
+          <ul class="result-list">
+            <li *ngFor="let e of erroresProcesamiento">
+              <strong>{{ e.archivo }}</strong>: {{ e.error }}
+            </li>
+          </ul>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>

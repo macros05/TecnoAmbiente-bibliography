@@ -1,0 +1,16 @@
+# Backend
+BACKEND/venv/
+BACKEND/__pycache__/
+BACKEND/.env
+BACKEND/*.pyc
+BACKEND/nohup.out
+BACKEND/errores.txt
+BACKEND/uploads
+
+# Frontend
+FRONTEND/node_modules/
+FRONTEND/dist/
+FRONTEND/.angular/
+
+# SO
+.DS_Store

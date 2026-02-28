@@ -1,0 +1,151 @@
+<div class="container-fluid">
+  
+  <div class="row mb-4 align-items-center">
+    <div class="col-md-8">
+      <h2>📂 Gestión de Documentos</h2>
+    </div>
+    
+    <div class="col-md-4 text-end">
+      <div class="stats-card ms-auto">
+        <div class="text-end">
+          <span class="d-block small opacity-75">Total Documentos</span>
+          <span class="h3 fw-bold mb-0">{{ totalRegistros }}</span>
+        </div>
+        <mat-icon>folder_open</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-card">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-8">
+        <div class="input-group">
+          <span class="input-group-text">
+            <mat-icon style="color: #004976">search</mat-icon>
+          </span>
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Buscar por título..." 
+            [(ngModel)]="filtroTitulo"
+            (keyup.enter)="buscar()">
+          <button class="btn btn-primary" (click)="buscar()">Buscar</button>
+        </div>
+      </div>
+
+      <div class="col-md-4 text-end">
+        <button class="btn btn-success" routerLink="/upload">
+          <mat-icon>cloud_upload</mat-icon>
+          Subir Nuevo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="cargando" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-2 text-muted">Cargando...</p>
+  </div>
+
+  <div class="results-card" *ngIf="!cargando">
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th style="width: 45%; cursor: pointer; user-select: none;" (click)="ordenar('titulo')">
+              <div class="d-flex align-items-center">
+                Documento
+                <mat-icon *ngIf="columnaOrdenada === 'titulo'" class="ms-1" style="font-size: 18px; width: 18px; height: 18px;">
+                  {{ ordenDireccion === 'asc' ? 'arrow_upward' : 'arrow_downward' }}
+                </mat-icon>
+                <mat-icon *ngIf="columnaOrdenada !== 'titulo'" class="ms-1 text-muted opacity-25" style="font-size: 18px; width: 18px; height: 18px;">
+                  unfold_more
+                </mat-icon>
+              </div>
+            </th>
+
+            <th style="width: 25%">Palabras Clave</th>
+
+            <th style="width: 15%; cursor: pointer; user-select: none;" (click)="ordenar('fecha')">
+              <div class="d-flex align-items-center">
+                Fecha
+                <mat-icon *ngIf="columnaOrdenada === 'fecha'" class="ms-1" style="font-size: 18px; width: 18px; height: 18px;">
+                  {{ ordenDireccion === 'asc' ? 'arrow_upward' : 'arrow_downward' }}
+                </mat-icon>
+                <mat-icon *ngIf="columnaOrdenada !== 'fecha'" class="ms-1 text-muted opacity-25" style="font-size: 18px; width: 18px; height: 18px;">
+                  unfold_more
+                </mat-icon>
+              </div>
+            </th>
+
+            <th style="width: 15%" class="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doc of documentos">
+            <td>
+              <div class="d-flex align-items-start">
+                <div class="pdf-icon-box">
+                  <mat-icon>picture_as_pdf</mat-icon>
+                </div>
+                <div>
+                  <div class="doc-title text-truncate" style="max-width: 400px;" title="{{doc.titulo}}">
+                    {{ doc.titulo || 'Sin título procesado' }}
+                  </div>
+                  <small class="text-muted">
+                    {{ doc.ruta_pdf.split('/').pop() }}
+                  </small>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div *ngIf="doc.palabras_clave">
+                <span *ngFor="let tag of getKeywordsArray(doc.palabras_clave)" class="keyword-chip">
+                  {{ tag }}
+                </span>
+              </div>
+              <small *ngIf="!doc.palabras_clave" class="text-muted fst-italic">Sin etiquetas</small>
+            </td>
+
+            <td>
+              <small class="text-muted">{{ doc.fecha_subida | date:'mediumDate' }}</small>
+            </td>
+
+            <td class="text-center">
+              <button class="action-btn btn-view" (click)="abrirPdf(doc.ruta_pdf)" matTooltip="Ver PDF">
+                <mat-icon>visibility</mat-icon>
+              </button>
+              <button class="action-btn btn-delete" (click)="eliminar(doc)" matTooltip="Eliminar">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+
+          <tr *ngIf="documentos.length === 0">
+            <td colspan="4" class="text-center py-5 text-muted">
+              <mat-icon style="font-size: 48px; width: 48px; height: 48px; opacity: 0.5">folder_off</mat-icon>
+              <p class="mt-2">No se encontraron documentos.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-footer" *ngIf="totalRegistros > 0">
+      <nav class="d-flex justify-content-between align-items-center">
+        <span class="text-muted small">
+          Página {{ paginaActual }} de {{ totalPages }} ({{ totalRegistros }} docs)
+        </span>
+        <ul class="pagination pagination-sm mb-0">
+          <li class="page-item" [class.disabled]="paginaActual === 1">
+            <button class="page-link" (click)="cambiarPagina(-1)">Anterior</button>
+          </li>
+          <li class="page-item" [class.disabled]="paginaActual === totalPages">
+            <button class="page-link" (click)="cambiarPagina(1)">Siguiente</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

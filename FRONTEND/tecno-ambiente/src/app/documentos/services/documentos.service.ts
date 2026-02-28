@@ -1,0 +1,94 @@
+import { HttpClient, HttpParams, HttpHeaders, HttpEvent } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Documento } from '../interfaces/document.interface';
+import { environment } from '../../../enviroments/enviroments';
+import { AuthService } from '../../auth/services/auth.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DocumentoService {
+  private apiUrl = environment.apiUrl;
+
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService  // Inyectamos el servicio de autenticación
+  ) { }
+
+  // Método para enviar los filtros en la búsqueda de documentos
+  buscarPorFiltros(filtros: {
+    titulo?: string, autor?: string, familia?: string, genero?: string,
+    especie?: string, palabras_clave?: string, distribucion?: string,
+    page?: number, page_size?: number,
+    order_by?: string,   // 'titulo' o 'fecha'
+    order_dir?: 'asc' | 'desc'
+    
+  }): Observable<{ total: number, resultados: Documento[] }> {
+
+    let params = new HttpParams();
+
+    Object.entries(filtros).forEach(([key, value]) => {
+      if (value !== undefined && value !== null && value !== '') {
+        params = params.set(key, value.toString());
+      }
+    });
+
+    // Agregar el token de acceso en los headers para las solicitudes
+    const headers = this.authService.getHeaders();
+
+    return this.http.get<{ total: number, resultados: Documento[] }>(
+      `${this.apiUrl}/documentos/buscar`, { params, headers }
+    );
+  }
+
+  // Método para subir documentos
+  subirDocumentos(archivos: File[]): Observable<any> {
+    const formData = new FormData();
+
+    archivos.forEach((archivo) => {
+      formData.append('archivos', archivo, archivo.name);
+    });
+
+    // Agregar el token de acceso en los headers para la solicitud de subida
+    const headers = this.authService.getHeaders();
+
+    return this.http.post(`${this.apiUrl}/documentos/subir`, formData, { headers });
+  }
+  actualizarDocumento(id: number, datos: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/documentos/${id}`, datos);
+  }
+  
+  subirDocumentosConProgreso(archivos: File[]): Observable<HttpEvent<any>> {
+    const formData = new FormData();
+    archivos.forEach(archivo => {
+      formData.append('archivos', archivo);
+    });
+
+    return this.http.post<any>(`${this.apiUrl}/documentos/subir`, formData, {
+      reportProgress: true,
+      observe: 'events',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`
+      }
+    });
+
+  }
+
+  verPdf(nombreArchivo: string): Observable<Blob> {
+    const headers = this.authService.getHeaders();
+    const nombreLimpio = nombreArchivo.split('/').pop() || nombreArchivo;
+    const params = new HttpParams().set('nombre', nombreLimpio);
+
+    return this.http.get(`${this.apiUrl}/ver-pdf`, {
+      headers,
+      params,
+      responseType: 'blob' 
+    });
+  }
+
+  eliminarDocumento(id: number): Observable<any> {
+    const headers = this.authService.getHeaders();
+    return this.http.delete(`${this.apiUrl}/documentos/${id}`, { headers });
+  }
+}

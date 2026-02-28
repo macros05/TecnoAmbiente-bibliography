@@ -1,0 +1,58 @@
+<div class="login-container">
+  <div class="login-card mat-elevation-z8">
+    
+    <div class="logo-header">
+      <img src="assets/logo-azul.png" alt="TecnoAmbiente Logo" />
+    </div>
+
+    <h3>Bienvenido</h3>
+    <p class="subtitle">Inicia sesión para gestionar la bibliografía</p>
+
+    <form (ngSubmit)="login()">
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Usuario o Correo</mat-label>
+        <input matInput 
+               [(ngModel)]="usernameOrEmail" 
+               name="usernameOrEmail" 
+               required 
+               autocomplete="username"
+               placeholder="ej. usuario@tecnoambiente.com">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput 
+               [type]="hidePassword ? 'password' : 'text'" 
+               [(ngModel)]="password" 
+               name="password" 
+               required 
+               autocomplete="current-password">
+        
+        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div *ngIf="errorMessage" class="error-msg">
+        <mat-icon>error_outline</mat-icon> 
+        <span>{{ errorMessage }}</span>
+      </div>
+
+      <button mat-raised-button class="btn-login" type="submit" [disabled]="isLoading">
+        <span *ngIf="!isLoading">Iniciar Sesión</span>
+        
+        <div *ngIf="isLoading" class="spinner-wrapper">
+           <mat-spinner diameter="20" color="accent"></mat-spinner>
+           <span>Cargando...</span>
+        </div>
+      </button>
+
+    </form>
+    
+    <div class="footer-login">
+      © 2025 TecnoAmbiente - A Tradebe Company
+    </div>
+  </div>
+</div>

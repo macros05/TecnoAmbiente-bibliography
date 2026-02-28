@@ -1,0 +1,414 @@
+.container-fluid {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  padding: 2rem 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h3, h4, h5 {
+  color: #333 !important;
+}
+
+/* Tarjeta de búsqueda */
+.search-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Título principal */
+.main-title {
+  color: #004976;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Filtros de búsqueda */
+.filter-box {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin-bottom: 2rem;
+}
+
+/* Botón de búsqueda */
+.search-btn {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.search-button {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  background-color: #F6BE00;
+  color: #004976;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #e0ac00;
+}
+
+/* Resultados */
+.results-container {
+  margin-top: 2rem;
+}
+
+.results-title {
+  color: #004976;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.05); /* Borde sutil */
+  box-shadow: 0 4px 20px rgba(0, 73, 118, 0.08); /* Sombra azulada muy suave */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.result-card:hover {
+  transform: translateY(-5px); /* Se levanta un poco más */
+  box-shadow: 0 12px 25px rgba(0, 73, 118, 0.15); /* Sombra más pronunciada al pasar el ratón */
+  border-color: #004976; /* Borde azul al hacer hover */
+}
+
+mat-card-title {
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; /* Asegurar fuente limpia */
+  font-weight: 500;       /* Más gordita */
+  color: #1a202c;         /* Casi negro, más elegante que #000 */
+  line-height: 1.4;       /* Mejor lectura si el título es largo */
+  letter-spacing: -0.5px; /* Un pelín más junto queda más moderno */
+}
+
+mat-card-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #718096 !important;
+  font-weight: 500;
+  margin-top: 8px !important;
+  font-size: 0.95rem;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+mat-list-item {
+  height: auto !important;
+  margin-bottom: 0.5rem;
+}
+
+.distribution {
+  color: #333 !important;
+  font-style: italic;
+}
+
+/* Botones Ver PDF y Editar */
+mat-card-actions {
+  display: flex;
+  gap: 1rem; /* espacio entre botones */
+  margin-top: 1rem;
+}
+
+
+.edit-form h4 {
+  margin-bottom: 1.5rem;
+  color: #004976;
+}
+
+/* Botones de Guardar y Cancelar */
+.edit-form .edit-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.edit-form button {
+  min-width: 150px;
+}
+
+/* Alertas y mensajes */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.mat-spinner {
+  margin: 2rem auto;
+}
+
+/* Iconos */
+mat-icon {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  color: #004976;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+/* Lista de especies analizadas */
+.edit-form ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.edit-form ul li {
+  margin-bottom: 0.5rem;
+  color: #004976;
+  font-weight: bold;
+}
+
+/* Tarjeta de bibliografía */
+.bibliografia-card {
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.bibliografia-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.edit-form {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 2rem; /* Más padding */
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+.edit-form h3 {
+  color: #004976;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs separados */
+.edit-form mat-form-field {
+  width: 100%;
+  margin-bottom: 1.5rem; /* espacio entre inputs */
+}
+
+/* Botones de Guardar y Cancelar */
+.edit-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* más separación entre botones */
+  margin-top: 2rem;
+}
+
+.edit-buttons button {
+  min-width: 180px; /* más anchos */
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+}
+
+/* Botón Guardar */
+.edit-buttons button:first-child {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+/* Botón Cancelar */
+.edit-buttons button:last-child {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Mejora inputs */
+mat-form-field.mat-form-field {
+  border-radius: 5px;
+}
+
+/* Mejora labels */
+mat-label {
+  font-weight: bold;
+  color: #004976;
+}
+/* --- ESTILOS NUEVOS PARA ETIQUETAS DE ESPECIES --- */
+
+.species-title {
+  display: flex;
+  align-items: center;
+  color: #004976;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+/* Contenedor flexible */
+.species-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Espacio entre etiquetas */
+}
+
+/* La píldora individual */
+.species-badge {
+  background-color: #f0f4f8;
+  color: #334e68;
+  border: 1px solid #d9e2ec;
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: help; /* Cambia el cursor para indicar que hay tooltip */
+}
+
+/* Efecto Hover */
+.species-badge:hover {
+  background-color: #004976; /* Azul TecnoAmbiente */
+  color: white;
+  border-color: #004976;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Estilo para la Familia (texto pequeño antes del nombre) */
+.species-badge .family-prefix {
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-right: 6px;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+}
+
+.species-badge .species-name {
+  font-style: italic; /* Nombres científicos en cursiva */
+  font-weight: 500;
+}
+
+/* --- AJUSTES EXTRA PARA TU CÓDIGO ACTUAL --- */
+
+/* Ajuste para que el icono del título no se pegue */
+.species-title mat-icon {
+  margin-right: 5px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.keywords-box {
+  /* Separación física */
+  margin-top: 15px;      /* Separación de arriba (autor/fecha) */
+  margin-bottom: 25px;   /* <--- ESTA ES LA CLAVE: Empuja las especies hacia abajo */
+  
+  /* Diseño visual de "Bloque" */
+  background-color: #f8f9fa; /* Fondo gris muy clarito */
+  border-left: 4px solid #F6BE00; /* Borde amarillo Tecnoambiente a la izquierda */
+  padding: 12px 15px;    /* Espacio interno para que el texto respire */
+  border-radius: 4px;    /* Bordes redondeados suaves */
+  
+  /* Texto */
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;         /* Para alinear el icono con el texto */
+  align-items: flex-start; /* Alinea arriba por si el texto es muy largo */
+}
+
+.keywords-box {
+  background-color: #fafafa; /* Fondo muy suave para todo el bloque */
+  border-left: 4px solid #F6BE00; /* Borde amarillo marca de la casa */
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  
+  /* Flexbox para alinear título y etiquetas si quieres que bajen de línea */
+  display: flex;
+  flex-direction: column; 
+  gap: 8px;
+}
+
+.k-header {
+  display: flex;
+  align-items: center;
+  color: #004976;
+  font-size: 0.95rem;
+}
+
+.k-header mat-icon {
+  color: #F6BE00;
+  margin-right: 8px;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Contenedor de las etiquetas */
+.k-list {
+  display: flex;
+  flex-wrap: wrap; /* Para que bajen de línea si no caben */
+  gap: 8px;       /* Espacio entre etiquetas */
+  margin-left: 28px; /* Indentación para alinearse con el texto del título */
+}
+
+/* DISEÑO DE LA ETIQUETA INDIVIDUAL */
+.keyword-chip {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #555;
+  padding: 4px 10px;
+  border-radius: 12px; /* Un poco menos redondeado que las especies */
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.keyword-chip:hover {
+  border-color: #F6BE00; /* Borde amarillo al pasar el ratón */
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.more-badge {
+    background-color: #e2e8f0; /* Un gris un poco más oscuro que las píldoras normales */
+    color: #486581;
+    cursor: default;
+    font-size: 0.8rem;
+    border: 1px dashed #cbd5e0; /* Borde discontinuo para indicar que "continúa" */
+}
+
+.more-badge:hover {
+    background-color: #cbd5e0;
+    transform: none; /* Que esta no salte al pasar el ratón */
+}
