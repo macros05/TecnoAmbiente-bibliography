@@ -12,7 +12,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 
 # === CONFIGURACIÓN ===
-UPLOAD_DIR = "/var/www/tecnoambiente/BACKEND/uploads" 
+UPLOAD_DIR = "/app/uploads" 
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
