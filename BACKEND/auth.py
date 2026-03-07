@@ -11,10 +11,8 @@ from schemas import UsuarioCreate, UsuarioLogin, UsuarioOut
 
 router = APIRouter()
 
-# Seguridad y configuración JWT
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# Reemplazar secret key. 
 SECRET_KEY = "e7e56b70a6235a50fc65f72dd3128d91f013ce76377fddf45052e3b1406fa201"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
@@ -101,3 +99,4 @@ def update_user(user_id: int, user_update: UsuarioCreate, db: Session = Depends(
     db.commit()
     db.refresh(user)
     return user
+
