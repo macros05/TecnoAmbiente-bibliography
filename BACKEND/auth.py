@@ -8,12 +8,14 @@ from sqlalchemy.orm import Session
 from models import Usuario
 from database import SessionLocal
 from schemas import UsuarioCreate, UsuarioLogin, UsuarioOut
+from dotenv import load_dotenv
+import os
 
 router = APIRouter()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-SECRET_KEY = "e7e56b70a6235a50fc65f72dd3128d91f013ce76377fddf45052e3b1406fa201"
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
@@ -99,4 +101,3 @@ def update_user(user_id: int, user_update: UsuarioCreate, db: Session = Depends(
     db.commit()
     db.refresh(user)
     return user
-
